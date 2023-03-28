@@ -29,10 +29,24 @@ public class App {
         
         Dugum dd=new Dugum(60);
         myList.sonaEkle(dd);
-        myList.arayaEkle(70, 9);
+        myList.arayaEkle(70, 20);
+        myList.sorguAdet(5);
         myList.listele();
 
-        
+        int sil=70;
+        int sonuc=myList.elemanSil(sil);
+        if(sonuc==0){
+            System.out.println(sil+" listeden silindi");
+        }
+        else if(sonuc==-1){
+            System.out.println("Liste boş");
+        }
+        else if(sonuc==-2){
+            System.out.println(sil+" listede bulunamadı");
+        }
+
+
+        myList.elemanSayisi();
 
 
 

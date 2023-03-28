@@ -95,6 +95,22 @@ public class TBListe {
     }
 
     //ödev1: aranan değerden listede kaç tane olduğunu geri döndüren fonksiyonu kodlayınız
+    public void sorguAdet(int aranan){
+        int adet=0;
+        Dugum temp=this.ilk;
+        while(temp!=null){
+            if(temp.getVeri()!=aranan){
+                temp=temp.getSonraki();
+            }
+            else{
+                adet++;
+                temp=temp.getSonraki();
+            }
+            
+        }
+        System.out.println("Aradığın değerin adedi: "+adet);
+    }
+
     // değeri verilen listede herhangi bir indexe ekleyen fonksiyon
     public void arayaEkle(int deger,int indis){
         if((this.ilk==null)||(indis==1)){//liste boş ise
@@ -111,15 +127,82 @@ public class TBListe {
            sayac++;
            temp=temp.getSonraki();
         }
+        if(temp==null){
+            this.sonaEkle(deger);
+            return;
+        }
         yeni.setSonraki(temp.getSonraki());//yeşil bağlantı
         temp.setSonraki(yeni);//mavi bağlantı
 
 
-
     }
-//ödev2:araya ekle fonksiyonunun sonaEkle fonk kullanılacak şekilde revize edilmesi
-//ödev3:sıralıEkle fonksiyonu değerleri sayısal olarak sıralı ekleyecek şekilde yazılacak(indis parametresi olmayan)
-//ödev4:eleman silme(değere ve indise göre)
+//ödev2:araya ekle fonksiyonunun sonaEkle fonk kullanılacak şekilde revize edilmesi (YAPTIM)
 
-    
+/*ödev3:sıralıEkle fonksiyonu değerleri sayısal olarak sıralı ekleyecek şekilde yazılacak(indis parametresi olmayan)
+
+public void siraliEkle(int deger){
+    Dugum temp=this.ilk;
+    int sayac=1;
+    if(this.ilk==null){
+        this.basaEkle(deger);
+    }
+    while(temp.getVeri()!=deger){
+        temp=temp.getSonraki();
+        sayac++;
+    }
+    if(temp.getVeri()==deger){
+        temp=arayaEkle(deger, sayac);
+        
+    }
+
 }
+
+*/
+/*ödev4:eleman silme(değere ve indise göre)
+public int elemanSil(int deger,int indis){
+    Dugum temp=this.ilk;
+    int sayac=1;
+    if(this.ilk==null){
+        System.out.println("Liste boş");
+        return 0;
+    }
+    while(temp.getVeri()!=deger){
+        temp=temp.getSonraki();
+        sayac++;
+    }
+    if(temp.getVeri()==deger){
+        temp=arayaEkle(deger, sayac);
+        
+    }
+    return 0;
+    */
+    //ödev5:verilen değeri listeden silen fonksiyonu yazınız(aynı değerden birden fazla varsa hepsini sil)
+                                           //verilen değerin ilkini  silen fonksiyon 
+    //1. liste boş olabilir
+    //2. listenin ilk elemanı silinirse liste başı değişecektir
+    //3. silenecek değer listede yok silme işlemi gerçekleşmez
+    //4. değer listeden silinir 
+    //silme işlemi başarılı ise 0 döndürsün
+    //liste boşsa -1 döndürsün
+    //eleman bulunmazsa (dolayısıyla silinmezse) -2 döndürsün
+      public int elemanSil(int deger){
+        if(this.ilk==null){
+            return -1;
+        }
+        if(this.ilk.getVeri()==deger){// listenin ilk elemanı silinirse
+           this.ilk=this.ilk.getSonraki();
+           return 0;
+        }
+        Dugum temp=this.ilk;
+        while(temp.getSonraki().getVeri()!=deger){
+            if(temp.getSonraki().getSonraki()==null){//listede eleman yoktur silinemez
+                return -2;
+            }
+            temp=temp.getSonraki();
+        }
+        temp.setSonraki(temp.getSonraki().getSonraki());
+        return 0;
+        }
+
+
+      }
