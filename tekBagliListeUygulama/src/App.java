@@ -14,16 +14,21 @@ public class App {
 
 
         TBListe myList=new TBListe();
+        myList.arayaEkle(5, 1);
+        myList.arayaEkle(6, 2);
+        myList.arayaEkle(6, 3);
+        myList.arayaEkle(7, 4);
+        myList.arayaEkle(7, 5);
+        myList.siraliEkle(52);
         myList.listele();
-        myList.basaEkle(10);
-        myList.basaEkle(20);
-        myList.sonaEkle(40);
-        myList.basaEkle(5);
-        myList.sonaEkle(30);
+
+
         myList.elemanSayisi();
+        myList.hepsiniSil(6);
+        myList.listele();
         
         
-        
+        /* 
         Dugum d=new Dugum(50);
         myList.basaEkle(d);
         
@@ -32,8 +37,8 @@ public class App {
         myList.arayaEkle(70, 20);
         myList.sorguAdet(5);
         myList.listele();
-
-        int sil=70;
+        
+        int sil=94;
         int sonuc=myList.elemanSil(sil);
         if(sonuc==0){
             System.out.println(sil+" listeden silindi");
@@ -44,7 +49,22 @@ public class App {
         else if(sonuc==-2){
             System.out.println(sil+" listede bulunamadı");
         }
+        */
 
+        /*  
+        int sil=44,indis=3;
+        int sonuc=myList.elemanSil(sil, indis);
+        if(sonuc==1){
+            System.out.println(sil+" listeden silindi");
+        }
+        else if(sonuc==0){
+            System.out.println("Liste boş");
+        }
+        else if(sonuc==-1){
+            System.out.println(sil+" listede bulunamadı");
+        }
+        myList.listele();
+        */
 
         myList.elemanSayisi();
 
