@@ -14,7 +14,9 @@ public class Dugum {
         this.onceki=null;
         this.sonraki=null;
     }
-
+    public void yazdir(){
+        System.out.println(" "+this.veri);
+    }
 
     public int getVeri() {
         return veri;
