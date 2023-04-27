@@ -21,8 +21,10 @@ public class App {
         myList.arayaEkle(7, 5);
         myList.siraliEkle(52);
         myList.listele();
+        myList.elemanSil(6);
+        myList.listele();
 
-
+        /*
         myList.elemanSayisi();
         myList.hepsiniSil(6);
         myList.listele();

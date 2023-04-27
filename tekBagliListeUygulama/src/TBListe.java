@@ -69,7 +69,7 @@ public class TBListe {
 
     //listede bir değeri arar ve bulduğunda o düğümü geri döndürür
      
-    public Dugum elemanBul(int deger){
+    public int elemanBul(int deger){
        Dugum temp=this.ilk;
        Dugum bulunan=null;
        while(temp!=null){
@@ -77,12 +77,12 @@ public class TBListe {
             temp=temp.getSonraki();
         }
         else{
-           temp=bulunan;
+           bulunan=temp;
            break;
         }
 
        }
-       return bulunan;
+       return bulunan.getVeri();
     }
 
     //ödev1: aranan değerden listede kaç tane olduğunu geri döndüren fonksiyonu kodlayınız

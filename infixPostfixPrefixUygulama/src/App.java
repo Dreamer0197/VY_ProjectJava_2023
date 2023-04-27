@@ -76,4 +76,13 @@ public class App {
         System.out.println("Işlem sonucu:"+postfix2Islem(postfixIfade));
         System.out.println(iFix2Postfix(inFixIfade));
     }
+
+    /*
+     * Bir string ifadeyi karaktere göre parçalama
+     * String [] postfixDizi=postfixIfade.split(" ");
+     * trim(); Başında veya sonunda boşluk varsa silinmesi
+     * equals(); String ifadenin bir ifadeye eşit olup olmadığını sorgulama
+     * Integer.parseInt(); String ifadeyi int a dönüştürür
+     * String.valueOf(); Int ifadeyi Stringe dönüştürür
+     */
 }
